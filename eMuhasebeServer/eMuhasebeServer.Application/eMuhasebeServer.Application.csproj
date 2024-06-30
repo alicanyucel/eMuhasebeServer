@@ -20,8 +20,4 @@
     <ProjectReference Include="..\eMuhasebeServer.Domain\eMuhasebeServer.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Users\CreateUser\" />
-  </ItemGroup>
-
 </Project>
