@@ -5,4 +5,4 @@ using MediatR;
 using TS.Result;
 
 namespace eMuhasebeServer.Application.Features.Users.GetAllUsers;
-internal sealed record GetAllUsersQuery() : IRequest<Result<List<AppUser>>>;
+public sealed record GetAllUsersQuery() : IRequest<Result<List<AppUser>>>;
