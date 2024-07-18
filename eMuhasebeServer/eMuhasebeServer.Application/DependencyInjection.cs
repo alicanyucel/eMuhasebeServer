@@ -1,4 +1,5 @@
 ﻿using eMuhasebeServer.Application.Behaviors;
+using eMuhasebeServer.Domain.Entities;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,7 +13,7 @@ namespace eMuhasebeServer.Application
 
             services.AddMediatR(conf =>
             {
-                conf.RegisterServicesFromAssemblies(typeof(DependencyInjection).Assembly);
+                conf.RegisterServicesFromAssemblies(typeof(DependencyInjection).Assembly,typeof(AppUser).Assembly);
                 conf.AddOpenBehavior(typeof(ValidationBehavior<,>));
             });
 
