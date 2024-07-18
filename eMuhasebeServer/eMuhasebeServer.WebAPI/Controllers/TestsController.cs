@@ -10,14 +10,14 @@ namespace eMuhasebeServer.WebAPI.Controllers;
 public class TestsController : ApiController
 {
     private readonly IFluentEmail _fluentEmail;
-    public TestsController(IMediator mediator,IFluentEmail fluentEmail) : base(mediator)
+    public TestsController(IMediator mediator, IFluentEmail fluentEmail) : base(mediator)
     {
         _fluentEmail = fluentEmail;
     }
     [HttpGet]
     public async Task<IActionResult> SendTestEmail()
     {
-        await _fluentEmail.To("yucelalican30@gmail.com").Subject("naber").Body("<h1> mail gonderme testi<h1>",true).SendAsync();
-       return NoContent();
+        await _fluentEmail.To("yucelalican30@gmail.com").Subject("naber").Body("<h1> mail gonderme testi<h1>", true).SendAsync();
+        return NoContent();
     }
 }
