@@ -17,7 +17,7 @@ public class TestsController : ApiController
     [HttpGet]
     public async Task<IActionResult> SendTestEmail()
     {
-        await _fluentEmail.To("yucelalican30@gmail.com").Subject("Test Maili").Body("<h1> mail gonderme testi<h1>",true).SendAsync();
+        await _fluentEmail.To("yucelalican30@gmail.com").Subject("naber").Body("<h1> mail gonderme testi<h1>",true).SendAsync();
        return NoContent();
     }
 }
