@@ -7,5 +7,6 @@
         {
             Id = Guid.NewGuid();
         }
+        public bool IsDeleted { get; set; }
     }
 }
