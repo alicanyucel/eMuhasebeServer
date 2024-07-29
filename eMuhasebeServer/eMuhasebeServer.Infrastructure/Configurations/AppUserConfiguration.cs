@@ -2,15 +2,14 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace eMuhasebeServer.Infrastructure.Configurations
+namespace eMuhasebeServer.Infrastructure.Configurations;
+internal sealed class AppUserConfiguration : IEntityTypeConfiguration<AppUser>
 {
-    internal sealed class AppUserConfiguration : IEntityTypeConfiguration<AppUser>
+    public void Configure(EntityTypeBuilder<AppUser> builder)
     {
-        public void Configure(EntityTypeBuilder<AppUser> builder)
-        {
-            builder.Property(p => p.FirstName).HasColumnType("varchar(50)");
-            builder.Property(p => p.LastName).HasColumnType("varchar(50)");
-            builder.HasQueryFilter(x => !x.IsDeleted);
-        }
+        builder.Property(p => p.FirstName).HasColumnType("varchar(50)");
+        builder.Property(p => p.LastName).HasColumnType("varchar(50)");
+
+        builder.HasQueryFilter(x => !x.IsDeleted);
     }
 }
